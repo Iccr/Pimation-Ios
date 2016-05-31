@@ -8,8 +8,9 @@
 
 import UIKit
 
-class AllDevicesViewController: UIViewController {
-
+class AllDevicesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    var devices = [("My room light", false), ("water pump", true)]
     @IBOutlet weak var tblView: UITableView!
 
 
@@ -17,6 +18,20 @@ class AllDevicesViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return devices.count
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tblView.dequeueReusableCellWithIdentifier("DeviceTableViewCell") as! DeviceTableViewCell
+        cell.lblDeviceName.text = devices[indexPath.row].0
+        cell.switchState.setOn(devices[indexPath.row].1, animated: false)
+        return cell
     }
 
     override func didReceiveMemoryWarning() {

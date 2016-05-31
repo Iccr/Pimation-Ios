@@ -46,26 +46,20 @@ class ViewController: UIViewController {
             Alamofire.request(.POST, url, parameters: params, encoding: .JSON, headers: nil).validate().responseJSON{
                 response in
                 switch response.result{
-                
                 case .Success:
-                    
-                        if let value = response.result.value{
-                            let jsn = JSON(value)
-                            print("jsn: \(jsn)")
-                            let authentication_token = jsn["authentication_token"]
-                            if(authentication_token != nil){
-                                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("dasboardViewController") as! DashBoardController
-                                self.presentViewController(vc, animated: true, completion: nil)
-                                
-                            }
+                    if let value = response.result.value{
+                        let jsn = JSON(value)
+                        print("jsn: \(jsn)")
+                        let authentication_token = jsn["authentication_token"]
+                        if(authentication_token != nil){
+                            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("dasboardViewController") as! DashBoardController
+                            self.presentViewController(vc, animated: true, completion: nil)
                         }
-                    
+                    }
                     break
                 case .Failure:
                     break
                 }
-               
-                
             }
         }
     }
