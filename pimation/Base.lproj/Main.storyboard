@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HDa-qe-TLa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="t3d-c1-geA">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -142,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="3259" y="-19"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Dash Board Controller-->
         <scene sceneID="4dp-pB-09e">
             <objects>
-                <tabBarController id="0vO-WD-yxB" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="dasboardViewController" id="0vO-WD-yxB" customClass="DashBoardController" customModule="pimation" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="EpL-y7-SWU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -181,30 +181,12 @@
             <point key="canvasLocation" x="2727" y="-19"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="O3l-dp-AF8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HDa-qe-TLa" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n2I-ec-4Oc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="t3d-c1-geA" kind="relationship" relationship="rootViewController" id="OPI-H1-YyB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VUw-Rf-FPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="288" y="361"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="GAU-DS-a8K">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t3d-c1-geA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="8bS-0j-ozZ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="exz-3H-0Bi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

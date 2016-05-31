@@ -45,17 +45,27 @@ class ViewController: UIViewController {
             let url: String = "http://localhost:3000/users/sign_in"
             Alamofire.request(.POST, url, parameters: params, encoding: .JSON, headers: nil).validate().responseJSON{
                 response in
-              
-              print("response: \(response)")
-                if let value = response.result.value{
-                 let jsn = JSON(value)
-                    print("jsn: \(jsn)")
-                    let authentication_token = jsn["authentication_token"]
-                    let error = jsn["error"]
-                    print(error)
-                    ///save the authentication token
-                    //go to dashboard
+                switch response.result{
+                
+                case .Success:
+                    
+                        if let value = response.result.value{
+                            let jsn = JSON(value)
+                            print("jsn: \(jsn)")
+                            let authentication_token = jsn["authentication_token"]
+                            if(authentication_token != nil){
+                                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("dasboardViewController") as! DashBoardController
+                                self.presentViewController(vc, animated: true, completion: nil)
+                                
+                            }
+                        }
+                    
+                    break
+                case .Failure:
+                    break
                 }
+               
+                
             }
         }
     }
