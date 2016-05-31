@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		90203EC31CFDA33500404304 /* DashBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90203EC21CFDA33500404304 /* DashBoardController.swift */; };
+		90203EC51CFDA7D000404304 /* AllDevicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90203EC41CFDA7D000404304 /* AllDevicesViewController.swift */; };
+		90203EC71CFDAAA400404304 /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90203EC61CFDAAA400404304 /* DeviceTableViewCell.swift */; };
 		90642BD91CEDC2D900294C2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90642BD81CEDC2D900294C2F /* AppDelegate.swift */; };
 		90642BDB1CEDC2D900294C2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90642BDA1CEDC2D900294C2F /* ViewController.swift */; };
 		90642BDE1CEDC2D900294C2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90642BDC1CEDC2D900294C2F /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 /* Begin PBXFileReference section */
 		31B15080D29CF27029F6C5C8 /* Pods_pimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90203EC21CFDA33500404304 /* DashBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashBoardController.swift; sourceTree = "<group>"; };
+		90203EC41CFDA7D000404304 /* AllDevicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllDevicesViewController.swift; sourceTree = "<group>"; };
+		90203EC61CFDAAA400404304 /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
 		90642BD51CEDC2D900294C2F /* pimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90642BD81CEDC2D900294C2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90642BDA1CEDC2D900294C2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 				90642BE11CEDC2D900294C2F /* LaunchScreen.storyboard */,
 				90642BE41CEDC2D900294C2F /* Info.plist */,
 				90203EC21CFDA33500404304 /* DashBoardController.swift */,
+				90203EC41CFDA7D000404304 /* AllDevicesViewController.swift */,
+				90203EC61CFDAAA400404304 /* DeviceTableViewCell.swift */,
 			);
 			path = pimation;
 			sourceTree = "<group>";
@@ -337,6 +343,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90203EC71CFDAAA400404304 /* DeviceTableViewCell.swift in Sources */,
+				90203EC51CFDA7D000404304 /* AllDevicesViewController.swift in Sources */,
 				90203EC31CFDA33500404304 /* DashBoardController.swift in Sources */,
 				90642BDB1CEDC2D900294C2F /* ViewController.swift in Sources */,
 				90642BD91CEDC2D900294C2F /* AppDelegate.swift in Sources */,
