@@ -109,7 +109,7 @@
         <!--All Devices-->
         <scene sceneID="2LO-QK-QXI">
             <objects>
-                <viewController id="9Cn-a5-jBN" customClass="AllDevicesViewController" customModule="pimation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllDevicesViewController" id="9Cn-a5-jBN" customClass="AllDevicesViewController" customModule="pimation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XL5-gU-2mH"/>
                         <viewControllerLayoutGuide type="bottom" id="P7E-0K-iRS"/>

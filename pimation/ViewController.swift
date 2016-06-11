@@ -12,12 +12,12 @@ import SwiftyJSON
 
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, NetworkManagerDelegate {
     var email: String?
     var password: String?
     var isValidEmail = false
     var isValidPassword = false
-    
+    let networkManager = NetworkManager.sharedInstance
     
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
@@ -39,31 +39,17 @@ class ViewController: UIViewController {
             }
         }
         
-        if(isValidEmail && isValidPassword){
-            print("sending to server for verification")
-            let params = ["user" : ["email" : "\(email!)", "password" : "\(password!)"]]
+        if(isValidEmail && isValidPassword) {
             let url: String = "http://localhost:3000/users/sign_in"
-            Alamofire.request(.POST, url, parameters: params, encoding: .JSON, headers: nil).validate().responseJSON{
-                response in
-                switch response.result{
-                case .Success:
-                    if let value = response.result.value{
-                        print(value)
-                        let jsn = JSON(value)
-                        print("jsn: \(jsn)")
-                        let authentication_token = jsn["token"]
-                        if(authentication_token != nil){
-                            print(authentication_token)
-                            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("dasboardViewController") as! DashBoardController
-                            self.presentViewController(vc, animated: true, completion: nil)
-                        }
-                    }
-                    break
-                case .Failure:
-                    print("Failed to established connection.")
-                    break
-                }
-            }
+            networkManager.authencicate(email!, password: password!, url: url)
+        }
+    }
+    
+    func didAuthenticateWithResult(token: String?, error: String?) {
+        print("inside view controller")
+        if let tkn = token {
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("AllDevicesViewController") as? AllDevicesViewController
+            self.presentViewController(vc!, animated: true, completion: nil)
         }
     }
     
@@ -77,7 +63,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        networkManager.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,7 +78,6 @@ class ViewController: UIViewController {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluateWithObject(testStr)
     }
-    
-    
+  
 }
 
