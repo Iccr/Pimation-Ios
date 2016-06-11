@@ -48,16 +48,19 @@ class ViewController: UIViewController {
                 switch response.result{
                 case .Success:
                     if let value = response.result.value{
+                        print(value)
                         let jsn = JSON(value)
                         print("jsn: \(jsn)")
-                        let authentication_token = jsn["authentication_token"]
+                        let authentication_token = jsn["token"]
                         if(authentication_token != nil){
+                            print(authentication_token)
                             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("dasboardViewController") as! DashBoardController
                             self.presentViewController(vc, animated: true, completion: nil)
                         }
                     }
                     break
                 case .Failure:
+                    print("Failed to established connection.")
                     break
                 }
             }
